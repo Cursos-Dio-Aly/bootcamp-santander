@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-
+    boolean existsByContaNumero(String numeroDaConta);
 }
