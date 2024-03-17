@@ -24,7 +24,7 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente criar(Cliente entity) {
         boolean existCliente = repository.existsByContaNumero(entity.getConta().getNumero());
         if (existCliente)
-            throw new RuntimeException("Essa conta já existe!");
+            throw new IllegalArgumentException("Essa conta já existe!");
 
         return repository.save(entity);
     }
