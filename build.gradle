@@ -24,6 +24,12 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+tasks.jar {
+	manifest {
+		attributes["Main-class"] = "org.me.dio.santanderbootcamp.SantanderBootcampApplication"
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
